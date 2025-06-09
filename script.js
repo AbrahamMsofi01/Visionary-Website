@@ -101,10 +101,11 @@ function downloadSong() {
         document.getElementById('cookie-consent').style.display = "block";
         return;
     }
-    // Ask for storage permission (browser will handle)
     const song = songs[currentSongIndex];
     song.downloads++;
     document.getElementById('song-downloads').textContent = `Downloads: ${song.downloads}`;
+
+    // Create a temporary anchor and trigger download
     const link = document.createElement('a');
     link.href = song.file;
     link.download = song.title + " - " + song.artist + ".mp3";
@@ -112,7 +113,6 @@ function downloadSong() {
     link.click();
     document.body.removeChild(link);
 }
-
 // Accept cookies
 function acceptCookies() {
     cookiesAccepted = true;
