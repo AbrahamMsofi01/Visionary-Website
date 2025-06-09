@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vision Plus Records</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="menu-bar">
+            <img src="assets/LOGO.png" alt="Logo" class="logo-bg">
+            <img src="assets/VPLUS.png" alt="VPlus Icon" class="vplus-icon">
+            <nav>
+                <a href="#about">About Us</a>
+                <a href="#contact">Contact Us</a>
+            </nav>
+        </div>
+        <h1 class="main-title">VISION PLUS RECORDS</h1>
+    </header>
+
+    <main>
+        <section class="music-gallery">
+            <div class="music-card" onclick="openSongPage(0)">
+                <img src="assets/@0060_Cacoon4.jpg" alt="Cacoon Vocalist Artwork">
+                <div class="music-info">
+                    <h2>Tiimbe Choir</h2>
+                    <p>Artist: Cacoon Vocalist</p>
+                    <p>Producer: Prodby Vplus</p>
+                </div>
+            </div>
+            <div class="music-card" onclick="openSongPage(1)">
+                <img src="assets/@0060_INNOSIDE.jpg" alt="Inno Side Artwork">
+                <div class="music-info">
+                    <h2>Liyana</h2>
+                    <p>Artist: Inno Side</p>
+                    <p>Producer: Prodby Vplus</p>
+                </div>
+            </div>
+            <div class="music-card" onclick="openSongPage(2)">
+                <img src="assets/@0063_Lilellz1.jpg" alt="Lil Ellz Artwork">
+                <div class="music-info">
+                    <h2>Guluu</h2>
+                    <p>Artist: Lil Ellz</p>
+                    <p>Producer: Prodby Vplus</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-bar">
+            <a href="#about" id="about-link">About Us</a>
+            <a href="#contact" id="contact-link">Contact Us</a>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('contact-modal')">&times;</span>
+            <h2>Upload your song today</h2>
+            <button onclick="redirectWhatsApp()">WhatsApp: +265 998 662 690</button>
+            <button onclick="redirectEmail()">Email: lukevplusnzima@gmail.com</button>
+        </div>
+    </div>
+    <div id="about-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('about-modal')">&times;</span>
+            <h2>About Vision Plus Records</h2>
+            <p>Vision Plus Records is dedicated to promoting talented artists and delivering quality music to the world. Join us and be part of the visionary movement!</p>
+        </div>
+    </div>
+
+    <!-- Song Modal -->
+    <div id="song-modal" class="modal">
+        <div class="modal-content song-modal-content">
+            <span class="close" onclick="closeModal('song-modal')">&times;</span>
+            <img id="song-artwork" src="" alt="Artwork" class="song-artwork">
+            <h2 id="song-title"></h2>
+            <p id="song-artist"></p>
+            <p id="song-producer"></p>
+            <div class="song-stats">
+                <span id="song-views"></span>
+                <span id="song-downloads"></span>
+                <span id="song-plays"></span>
+            </div>
+            <audio id="audio-player" controls style="display:none;"></audio>
+            <div class="song-actions">
+                <button onclick="playSong()">Play Now</button>
+                <button onclick="downloadSong()">Download Now For Free</button>
+            </div>
+            <div id="cookie-consent" style="display:none;">
+                <p>Accept cookies and terms to download.</p>
+                <button onclick="acceptCookies()">Accept</button>
+                <button onclick="closeModal('song-modal')">Decline</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
